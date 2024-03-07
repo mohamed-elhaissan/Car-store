@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <title>Morent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #E0E9F4;
+            font-family: 'plus jakarta sans',sans-serif;
+        }
+        .container {
+            margin: 10px 80px;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: transparent;
+            padding-bottom: 40px;
+            backdrop-filter: blur(10px);
+            
+            
+        }
+        .navbar div {
+            display: flex;
+            align-items: center;
+            
+        }
+        .first-side {
+            display: flex;
+            align-items: center;
+            width: 60%;
+        }
+        .first-side h1 {
+            color: #3563E9;
+            position: relative;
+            margin-right: 50px;
+        }
+        .first-side span {
+            display: flex;
+            align-items: center;
+            padding:0px 20px ;
+            border: 1px solid rgba(0, 0, 0, .2);
+            width: 50%;
+            border-radius: 20px;
+        }
+        .first-side span input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-family: 'plus jakarta sans',sans-serif;
+            width: 100%;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .second-side{
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .first-side span  i{
+            transition: color .4s ease;
+            cursor: pointer;
+        }
+        .first-side span  i:hover{
+            color: #3563E9;
+        }
+        .second-side i {
+            cursor: pointer;
+            margin: 0px 10px;
+            font-size: 20px;
+        }
+        .second-side i {
+            border: 1px solid rgba(0, 0, 0, .2);
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .second-side i:last-of-type{
+            transition: transform .8s ease, color .4s ease,border-color .4s ease-in-out;
+        }
+        .second-side i:first-of-type{
+            transition: all .3s ease;
+        }
+        .second-side i:nth-of-type(2){
+            transition: all .3s ease;
+        }
+        .second-side i:last-of-type:hover {
+            transform: rotate(90deg);
+            color: #5c0099;
+            border-color: #5c0099;
+        }
+        .second-side i:first-of-type:hover {
+            color: red  ;
+            border-color: red;
+        }
+        .second-side i:nth-of-type(2):hover {
+            color: #ffd100;
+            border-color: #ffd100;
+        }
+
+        .top .first-element {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        main {
+            margin-top: 40px;
+        }
+        .top .first-element span{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            width: 50%;
+            padding: 20px;
+            color:#E0E9F4;
+            height: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, .2);
+        }
+        .top .first-element span h2,.top .first-element span  p{
+            width: 40%;
+            text-transform: capitalize;
+        } 
+        .top .first-element span h2{
+            font-size: 30px;
+            width: 50%;
+        }
+        .top .first-element span:first-of-type{
+            background: url(Ads\ 1.svg) no-repeat center ;
+            background-size: cover;
+        }   
+        .top .first-element span:last-of-type{
+            background: url(Ads\ 2.svg) no-repeat center ;
+            background-size: cover;
+        }   
+        button {
+            width: 20%;
+            font-family: 'plus jakarta sans',sans-serif;
+            font-weight: 400;
+            border: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+            background: #3563E9;
+            transition: transform .4s ease,text-shadow .4s ease-in,border-reduis .4s ;
+        }
+        .first-element span:last-of-type button{
+            background: #54A6FF;
+        }
+        button:hover, button:focus {
+            text-shadow: 0px 0px 20px #fff;
+            transform: scale(1.1);
+            border-radius: 10px;
+        }
+        .get {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .get div {
+            width: 50%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 2px solid rgba(0, 0, 0, .1);
+            cursor: pointer;
+            transition: box-shadow .4s ease;
+        }
+        .get div:hover {
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, .1);
+        }
+        .get div > span:not(.get div > span:first-of-type) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .get div > span > span:not(.get div > span > span:first-of-type) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            border-left: 1px solid rgba(0, 0, 0, .2);
+            padding-left: 20px;
+        }
+        .get div > span > 
+        .get div > span > span h5 {
+            font-size: 17px;
+        }
+        select {
+            background-color: transparent;
+            border: none;
+            font-family: 'plus jakarta sans',sans-serif;
+            outline: none;
+        }
+        option {
+            font-family: 'plus jakarta sans',sans-serif;
+        }
+        .get i {
+            background-color: #3563E9;
+            padding: 20px;
+            font-size: 18px;
+            color: #fff;
+            
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, .1);
+            border-radius: 15px;
+            transition: transform .5s ease;
+        }
+        .get i:hover {
+            transform: rotate(180deg);
+            border-radius: 50%;
+        }
+        .get h5 {
+            font-size: 18px;
+        }
+        button {
+            cursor: pointer;
+        }
+        .spearator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            font-weight: 500;
+        }
+        .spearator p {
+            color: #90A3BF;
+        }
+        .spearator a {
+            text-decoration: none;
+            transition: all .4s ease;
+        }
+        .spearator a:hover {
+            color: #3563E9;
+        }
+        .popular-cars {
+            display: flex;
+            gap: 0px;
+            margin-top: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .popular-cars div {
+            border: 1px solid rgba(0, 0, 0, .2);
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            min-width: 23%;
+            flex-grow: 1;
+            flex-shrink: 0;
+            margin-right: 10px;
+            margin-bottom: 40px;
+            background-color: #fff;
+        }
+
+        .popular-cars div span {
+            display: flex;
+            align-items: center; 
+            margin: 10px 0px 30px;
+            justify-content: space-between;
+        }
+        .popular-cars div span button {
+            width: 40%;
+        }
+        .popular-cars div span button:hover {
+            transform: scale(1);
+            border-radius: 0px;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, .1);
+        }
+        .popular-cars div span:nth-of-type(2){
+            justify-content: center;
+            gap: 20px;
+        }
+        .popular-cars div span:last-of-type p {
+            font-weight: 500;
+        }
+        .popular-cars:hover div{
+            filter: blur(3px);
+            opacity: .5;
+            transform: scale(.99);
+            transition: all .5s ease-out;
+        }
+        .popular-cars div:hover {
+            filter: blur(0px);
+            opacity: 1;
+            transform: scale(1.03);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, .1);
+        }
+        .middle .popular-cars:hover div {
+            filter: blur(0px);
+        }
+        .show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size:16px;
+            color:black;
+            padding:20px;
+            border-top: 2px dashed rgba(0, 0, 0, .2);
+        }
+        footer div:last-of-type {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .top .first-element {
+                display: flex;
+                flex-direction: column;
+            }
+            .navbar {
+                flex-direction: column-reverse;
+            }
+            .navbar h1 {
+                text-align: center;
+                margin: 10px 20px;
+            }
+
+            .top .first-element span {
+                width: 100%;
+            }
+            .get {
+                flex-direction: column;
+            }
+            .get div {
+                width: 100%;
+            }
+            .show button {
+                width: 40%;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            .container {
+                margin: 10px 10px;
+            }
+            .second-side i:not(i:last-of-type){
+                display: none;
+            }
+            .navbar {
+                flex-direction: column-reverse;
+            }
+            .navbar h1 {
+                text-align: center;
+                margin: 10px 20px;
+            }
+            .first-side {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .first-side span {
+                width: 100%;
+            }
+            .top .first-element {
+                flex-direction: column;
+            }
+            
+            .top .first-element span {
+                width: 100%;
+                text-align: center;
+                backdrop-filter: blur(10px);
+
+            }
+            .top .first-element span h2,.top .first-element span p,.top .first-element span button {
+                width: 100%;
+            }
+            .get {
+                flex-direction: column;
+            }
+            .get div {
+                width: 100%;
+                font-size: 1rem;
+            }
+            .get div span:not(.get div span:first-of-type) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .get div > span > span:not(.get div > span > span:first-of-type){
+                border: none;
+                padding: 0px;
+            }
+            .show button {
+                width: 40%;
+            }
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            footer p {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="first-side">
+                <h1>Morent</h1>
+                <span>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Search Something here">
+                </span>
+            </div>
+            <div class="second-side">
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </div>
+        <main>
+            <div class="top">
+                <div class="first-element">
+                    <span>
+                        <h2>The Best platform for carRental</h2>
+                        <p>Ease of doing a car rental safely and reliably. Of course at a low price.</p>
+                        <button>Rental Car</button>
+                    </span>
+                    <span>
+                        <h2>Easy way to rent a car at a low price</h2>
+                        <p>Providing cheap car rental services and safe and comfortable facilities.</p>
+                        <button>Rental Car</button>
+                    </span>
+                </div>
+                <div class="get">
+                    <div>
+                        <span>
+                            <input type="radio" name="radio">
+                            <label for="radio">Pick-Up</label>
+                        </span>
+                        <span class=".select">
+                            <span >
+                                <h5>Localisation</h5>
+                                <select>
+                                    <option value="Value">Select Your City</option>
+                                    <option value="Value">Agadir</option>
+                                    <option value="Value">Rabat</option>
+                                    <option value="Value">Casablanca</option>
+                                </select>
+                            </span>
+                            <span>
+                                <h5>Date</h5>
+                                <select>
+                                    <option value="Value">Select Your Date</option>
+                                    <option value="Value">Today</option>
+                                    <option value="Value">Next month</option>
+                                    <option value="Value">Next Year</option>
+                                </select>
+                            </span>
+                            <span>
+                                <h5>Time</h5>
+                                <select>
+                                    <option value="Value">Select Your Time</option>
+                                    <option value="Value">now</option>
+                                    <option value="Value">after 5 min</option>
+                                    <option value="Value">Never</option>
+                                </select>
+                            </span>
+                        </span>
+                    </div>
+                    <i class="fa-solid fa-right-left"></i>
+                    <div>
+                        <span>
+                            <input type="radio" name="radio">
+                            <label for="radio">Drop-Off</label>
+                        </span>
+                        <span class=".select">
+                            <span>
+                                <h5>Localisation</h5>
+                                <select>
+                                    <option value="Value">Select Your City</option>
+                                    <option value="Value">Agadir</option>
+                                    <option value="Value">Rabat</option>
+                                    <option value="Value">Casablanca</option>
+                                </select>
+                            </span>
+                            <span>
+                                <h5>Date</h5>
+                                <select>
+                                    <option value="Value">Select Your Date</option>
+                                    <option value="Value">Today</option>
+                                    <option value="Value">Next month</option>
+                                    <option value="Value">Next Year</option>
+                                </select>
+                            </span>
+                            <span>
+                                <h5>Time</h5>
+                                <select>
+                                    <option value="Value">Select Your Time</option>
+                                    <option value="Value">now</option>
+                                    <option value="Value">after 5 min</option>
+                                    <option value="Value">Never</option>
+                                </select>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="spearator">
+                    <p>Popular Car</p>
+                    <a href="View.html">View All</a>
+                </div>
+                <div class="popular-cars">
+                    <div>
+                        <span>
+                            <h2>Koenigsegg</h2>
+                            <i class="fa-solid fa-heart" ></i>
+                        </span>
+                        <img src="car1.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>2 People</p>
+                        </span>
+                        <span>
+                            <p>$99.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Nissan GT-R</h2>
+                            <i class="fa-solid fa-heart"></i>
+                        </span>
+                        <img src="car2.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>2 People</p>
+                        </span>
+                        <span>
+                            <p>$80.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Rolls - Roys</h2>
+                            <i class="fa-solid fa-heart"></i>
+                        </span>
+                        <img src="car3.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>2 People</p>
+                        </span>
+                        <span>
+                            <p>$40.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Nissan GT-R</h2>
+                            <i class="fa-solid fa-heart" id="hearting" onclick="transfere()"></i>
+                        </span>
+                        <img src="car2.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>1 People</p>
+                        </span>
+                        <span>
+                            <p>$20.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="spearator">
+                <p>Recomonded</p>
+            </div>
+            <div class="middle">
+                <div class="popular-cars">
+                    <div>
+                        <span>
+                            <h2>All new Rush</h2>
+                            <i class="fa-solid fa-heart" style="color: red;" ></i>
+                        </span>
+                        <img src="assessts/item1.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>70 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>8 People</p>
+                        </span>
+                        <span>
+                            <p>$72.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Cr -V</h2>
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <img src="assessts/item-2.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>80 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>6 People</p>
+                        </span>
+                        <span>
+                            <p>$80.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>All New Terios</h2>
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <img src="assessts/item-3.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>2 People</p>
+                        </span>
+                        <span>
+                            <p>$40.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Cr-v</h2>
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <img src="assessts/item-4.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>1 People</p>
+                        </span>
+                        <span>
+                            <p>$20.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>MG ZX Exclusice </h2>
+                            <i class="fa-solid fa-heart" style="color: red;" ></i>
+                        </span>
+                        <img src="assessts/item-5.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>8 People</p>
+                        </span>
+                        <span>
+                            <p>$76.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>New MG ZS</h2>
+                            <i class="fa-solid fa-heart" style="color: red;" ></i>
+                        </span>
+                        <img src="assessts/item-6.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>6 People</p>
+                        </span>
+                        <span>
+                            <p>$80.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>MG ZX Exute</h2>
+                            <i class="fa-solid fa-heart" style="color: red;" ></i>
+                        </span>
+                        <img src="assessts/item-5.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>90 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>2 People</p>
+                        </span>
+                        <span>
+                            <p>$40.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>New MG ZS</h2>
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <img src="assessts/item-6.svg">
+                        <span>
+                            <i class="fa-solid fa-oil-can"></i>
+                            <p>50 L</p>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>1 People</p>
+                        </span>
+                        <span>
+                            <p>$20.00/day</p>
+                            <button>Rent Now</button>
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="show">
+                <button>Show More Cars</button>
+            </div>
+        </main>
+        <footer>
+            <div>
+                <p>©2022 MORENT. All rights reserved</p>
+            </div>
+            <div>
+                <p>Privacy & Policy</p>
+                <p>Terms & Condition</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
